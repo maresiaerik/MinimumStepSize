@@ -23,7 +23,7 @@ Current truth_list:     ['X', 'X', 'X', '.', 'X']
 
 Current truth_list:     ['X', 'X', 'X', 'X', 'X'],
 ```
-where 'X' is a value that has been _visited_ and '.' not yet.
+where `X` is a value that has been _visited_ and `.` not yet.
 
 ---
 
@@ -51,6 +51,6 @@ Current truth_list:     ['X', '.', 'X', 'X', 'X', 'X']
 Current truth_list:     ['X', 'X', 'X', 'X', 'X', 'X'],
 
 ```
-where 'X' is a value that has been _visited_ and '.' not yet.
+where `X` is a value that has been _visited_ and `.` not yet.
 
 And so on.
