@@ -48,31 +48,33 @@ def calculate_minimum(step_size):
             #   Make i always a value inside the truth_list
             i = 1 if i % len(user_list) == 0 else (i % len(user_list))
 
-while True:
-    try:
-      list_length = int(input('\nList length: \t'))
-    except:
-      print("\nInput must be an integer.")
-      continue
-
-    if list_length < 3:
-      print('\nList length too small.')
-      continue
-
-    if list_length > 80:
-        prompt = input('\nAre you sure to have a list_length of {}?, your browser might crash. [y/n]: '.format(list_length))
-        prompt = prompt.lower()
-        if prompt == 'n' or prompt == 'no':
+if __name__ == "__main__":
+    print('\nPlese input a list length to find out what is the smallest possible step-size to loop through all of the values in a list, without going over the same value twice.\n\nThe given list length should be larger than 2. It is advisable that the list length would be less than 100.')
+    while True:
+        try:
+            list_length = int(input('\nList length: \t'))
+        except:
+            print("\nInput must be an integer.")
             continue
 
-    #   Create list from 1 until given value
-    user_list = [x for x in range(1, list_length  + 1)]
+        if list_length < 3:
+            print('\nList length too small.')
+            continue
 
-    print('\nYour list: \t{}'.format(print_array(user_list)))
+        if list_length > 80:
+            prompt = input('\nAre you sure to have a list_length of {}?, your browser might crash. [y/n]: '.format(list_length))
+            prompt = prompt.lower()
+            if prompt == 'n' or prompt == 'no':
+                continue
 
-    truth_list = {}
-    latest_step_size = 2
+        #   Create list from 1 until given value
+        user_list = [x for x in range(1, list_length  + 1)]
 
-    minimum = calculate_minimum(step_size=latest_step_size)
+        print('\nYour list: \t{}'.format(print_array(user_list)))
 
-    print('\nMinimum: \t{}\n\n'.format(minimum))
+        truth_list = {}
+        latest_step_size = 2
+
+        minimum = calculate_minimum(step_size=latest_step_size)
+
+        print('\nMinimum: \t{}\n\n'.format(minimum))
