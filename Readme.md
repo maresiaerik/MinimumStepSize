@@ -3,7 +3,8 @@
 What is the **smallest** possible step size _i_ to loop through all of the values in a list of length _n_, without going over the same value twice, given that _i_ > 1 and _n_ > 2?
 
 > If _i = 1_, 1 would be the answer to all possible scenarios, regardless of the value of _n_
-If _n <= 2_, _i_ would be 1
+
+> If _n <= 2_, _i_ would be 1
 
 ##### Example:
 
