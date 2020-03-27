@@ -32,18 +32,31 @@ def calculate_minimum(step_size):
             #   Make i always a value inside the truth_list
             i = 1 if i % len(user_list) == 0 else (i % len(user_list))
 
-list_length = int(input('\nList length: \t'))
-if list_length < 1:
-    exit(0)
+while True:
+    try:
+      list_length = int(input('\nList length: \t'))
+    except:
+      print("\nInput must be an integer.")
+      continue
 
-#   Create list from 1 until given value
-user_list = [x for x in range(1, list_length  + 1)]
+    if list_length < 3:
+      print('\nList length too small.')
+      continue
 
-print('\nYour list: \t{}'.format(user_list))
+    if list_length > 80:
+        prompt = input('\nAre you sure to have a list_length of {}?, your browser might crash. [y/n]: '.format(list_length))
+        prompt = prompt.lower()
+        if prompt == 'n' or prompt == 'no':
+            continue
 
-truth_list = {}
-latest_step_size = 2
+    #   Create list from 1 until given value
+    user_list = [x for x in range(1, list_length  + 1)]
 
-minimum = calculate_minimum(step_size=latest_step_size)
+    print('\nYour list: \t{}'.format(user_list))
 
-print('\nMinimum: \t{}\n\n'.format(minimum))
+    truth_list = {}
+    latest_step_size = 2
+
+    minimum = calculate_minimum(step_size=latest_step_size)
+
+    print('\nMinimum: \t{}\n\n'.format(minimum))
