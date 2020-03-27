@@ -23,7 +23,7 @@ def print_array(arr):
     for x in arr:
         res += "'{}'".format(x)
         if i < len(arr):
-        res += ','
+            res += ','
         i += 1
     res += ']'
     return res
